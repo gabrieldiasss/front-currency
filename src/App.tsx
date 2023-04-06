@@ -4,7 +4,7 @@ import { GlobalStyle } from "./styles/theme/global";
 import { defaultTheme } from "./styles/theme/default";
 import { AppWrapper } from "./styles";
 import { CurrencyConverter } from "./components/CurrencyConverter";
-import Masky from './assets/mask.png'
+import { CurrencyImage } from "./components/CurrencyImage";
 
 function App() {
   return (
@@ -14,9 +14,8 @@ function App() {
         <Header />
         <main>
           <CurrencyConverter />
-
-          <img src={Masky} alt="" />
         </main>
+        <CurrencyImage />
       </AppWrapper>
     </ThemeProvider>
   );

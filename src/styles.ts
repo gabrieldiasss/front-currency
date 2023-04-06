@@ -7,12 +7,5 @@ export const AppWrapper = styled.div`
 
     main {
         margin-top: 4rem;
-
-        img {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100vh;
-        }
     }
 `
