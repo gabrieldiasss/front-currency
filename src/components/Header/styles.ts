@@ -5,19 +5,21 @@ export const HeaderContainer = styled.header`
   align-items: center;
 
   gap: 2rem;
-`;
 
-export const HeaderInfos = styled.div`
+  div {
     p {
-        margin-top: 0.25rem;
-        color: ${({ theme }) => theme.colors["base-hover"]}
+      margin-top: 0.25rem;
     }
+  }
 `;
 
 export const HeaderDate = styled.div`
+
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+
   time {
-    color: ${({ theme }) => theme.colors["base-time"]};
     font-weight: 500;
-    
   }
 `;

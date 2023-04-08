@@ -1,11 +1,12 @@
 export const defaultTheme = {
     colors: {
         "base-white": "#FFFF",
-        "base-label": "#8C9CAD",
-        "base-text": "#2E3742",
+        "base-black": "#000000",
+        "base-text-100": "#8C9CAD",
+        "base-text-300": "#45505E",
+        "base-text-500": "#2E3742",
         "base-border": "#D7E0EB",
-        "base-time": "#45505E",
-        "base-button": "#000000" 
+        "base-hover": "#8C9CAD"
     },
     textSize: {
         "text-s": "0.875rem",

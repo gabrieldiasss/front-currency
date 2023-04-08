@@ -1,18 +1,21 @@
-import { HeaderContainer, HeaderDate, HeaderInfos } from "./styles";
+import { HeaderContainer, HeaderDate } from "./styles";
 import Logo from "../../assets/logo.svg";
+import { dateCurrent, hourCurrent } from "../../utils/format";
+import { RegularText } from "../Typograph";
 
 export function Header() {
+
   return (
     <HeaderContainer>
       <img src={Logo} alt="" width={150} />
-      <HeaderInfos>
+      <div>
         <HeaderDate>
-          <time>20 de março de 2023 </time>
-          |
-          <time>22:00 UTC</time>
+          <time>{dateCurrent}</time>
+          <div>|</div>
+          <time>{hourCurrent} UTC</time>
         </HeaderDate>
-        <p>Dados de câmbio disponibilizados pela Morningstar.</p>
-      </HeaderInfos>
+        <RegularText color="100" weight={400} size="s">Dados de câmbio disponibilizados pela Morningstar.</RegularText>
+      </div>
     </HeaderContainer>
   );
 }

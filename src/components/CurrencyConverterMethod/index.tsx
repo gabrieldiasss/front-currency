@@ -8,7 +8,7 @@ import {
 export function CurrencyConverterMethod() {
   return (
     <ConvertSelectedMethodContainer>
-      <Label size="xs">Tipo de compra</Label>
+      <Label color="500" size="xs">Tipo de compra</Label>
 
       <ConvertSelectedMethodInputs>
         <CurrencyMethodField>

@@ -6,13 +6,13 @@ export function CurrencyConverterForm() {
     return (
         <CurrencyConverterFormContainer>
           <ConvertCurrencyField>
-            <Label size="xs" htmlFor="dolar">Dólar</Label>
-            <Input type="number" placeholder="$ 1,00" />
+            <Label color="500" size="xs" htmlFor="dolar">Dólar</Label>
+            <Input type="number" placeholder="$ 1,00" id="dolar" />
           </ConvertCurrencyField>
 
           <ConvertCurrencyField>
-            <Label size="xs" htmlFor="stateFee">Taxa do Estado</Label>
-            <Input type="number" placeholder="5.3 %" />
+            <Label color="500" size="xs" htmlFor="stateFee">Taxa do Estado</Label>
+            <Input type="number" placeholder="5.3 %" id="stateFee" />
           </ConvertCurrencyField>
         </CurrencyConverterFormContainer>
     )

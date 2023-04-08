@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
-export const ConverterContainer = styled.div``;
-
-export const ConvertCurrencyForm = styled.div``;
-
 export const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors["base-button"]};
+  background-color: ${({ theme }) => theme.colors["base-black"]};
   color: ${({ theme }) => theme.colors["base-white"]};
   display: flex;
   align-items: center;
@@ -19,7 +15,6 @@ export const Button = styled.button`
 
   &:hover {
     transition: 0.4s;
-    background-color: ${({ theme }) => theme.colors["base-label"]};
-
+    background-color: ${({ theme }) => theme.colors["base-hover"]};
   }
 `;
