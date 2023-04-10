@@ -1,10 +1,22 @@
-import { InputHTMLAttributes } from "react"
-import { InputStyled } from "./styles"
+import { InputHTMLAttributes, forwardRef } from "react";
+import { InputStyled, InputFake } from "./styles";
 
-type InputProps = InputHTMLAttributes<HTMLInputElement> 
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  dollar?: boolean;
+  error?: string;
+};
 
-export function Input({...props}: InputProps) {
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ dollar, error, ...props }, ref) => {
     return (
-        <InputStyled {...props} />
-    )
-}
+      <div>
+        <InputFake>
+          {dollar && <span>$</span>}
+          <InputStyled ref={ref} {...props} />
+        </InputFake>
+
+        {error}
+      </div>
+    );
+  }
+);

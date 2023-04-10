@@ -1,29 +1,46 @@
+import { CurrencyMethodInput } from "../CurrencyMethodInput";
 import { Label } from "../Typograph";
 import {
   ConvertSelectedMethodContainer,
   ConvertSelectedMethodInputs,
-  CurrencyMethodField,
 } from "./styles";
+import { useFormContext } from "react-hook-form";
+
+const type = {
+  money: {
+    label: "Dinheiro",
+  },
+  card: {
+    label: "Cartão",
+  },
+};
 
 export function CurrencyConverterMethod() {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
+  const typePurchaseError = errors.typeOfPurchase?.message as unknown as string;
+
   return (
     <ConvertSelectedMethodContainer>
-      <Label color="500" size="xs">Tipo de compra</Label>
+      <Label color="500" size="xs">
+        Tipo de compra
+      </Label>
 
       <ConvertSelectedMethodInputs>
-        <CurrencyMethodField>
-          <input id="card" type="radio" />
-          <label>
-            <div>Dinheiro</div>
-          </label>
-        </CurrencyMethodField>
+        {Object.entries(type).map(([key, { label }]) => (
+          <CurrencyMethodInput
+            key={label}
+            id={key}
+            label={label}
+            value={key}
+            {...register("typeOfPurchase")}
+          />
+        ))}
 
-        <CurrencyMethodField>
-          <input id="card" type="radio" />
-          <label>
-            <div>Dinheiro</div>
-          </label>
-        </CurrencyMethodField>
+        {typePurchaseError}
       </ConvertSelectedMethodInputs>
     </ConvertSelectedMethodContainer>
   );

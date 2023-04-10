@@ -15,6 +15,7 @@ function App() {
         <main>
           <CurrencyConverter />
         </main>
+
         <CurrencyImage />
       </AppWrapper>
     </ThemeProvider>

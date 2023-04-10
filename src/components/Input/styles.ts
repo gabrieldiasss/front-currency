@@ -1,19 +1,40 @@
 import styled from "styled-components";
 
+export const InputFake = styled.div`
+  display: flex;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  width: 10.5rem;
+  height: 3.5rem;
+  border: 1px solid ${({ theme }) => theme.colors["base-border"]};
+  border-radius: 4px;
+  padding: 0 1rem;
+  color: ${({ theme }) => theme.colors["base-text-500"]};
+  box-shadow: 0px 5px 3px ${({ theme }) => theme.colors["base-border"]};
+
+  outline: 0;
+
+  margin-top: 0.5rem;
+
+  span {
+    color: ${({ theme }) => theme.colors["base-text-100"]};
+  }
+
+`;
+
 export const InputStyled = styled.input`
-    width: 10.5rem;
-    height: 3.5rem;
-    border: 1px solid ${({ theme }) => theme.colors["base-border"]};
-    border-radius: 4px;
-    padding: 0 1rem;
-    color: ${({ theme }) => theme.colors["base-text-500"]};
-    box-shadow: 0px 5px 3px ${({ theme }) => theme.colors["base-border"]};
+  background: none;
+  outline: none;
+  border: 0;
 
-    outline: 0;
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-    margin-top: 0.5rem;
-
-    &::placeholder {
-        color: ${({ theme }) => theme.colors["base-text-100"]};
-    }
-`
+  &::placeholder {
+    color: ${({ theme }) => theme.colors["base-text-100"]};
+  }
+`;

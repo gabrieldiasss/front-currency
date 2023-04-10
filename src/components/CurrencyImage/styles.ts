@@ -5,4 +5,5 @@ export const Image = styled.img`
   top: 0;
   right: 0;
   height: 100vh;
+  z-index: -1;
 `;
