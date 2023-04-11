@@ -35,6 +35,8 @@ export const InputStyled = styled.input`
   outline: none;
   border: 0;
 
+  width: 100%;
+
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
