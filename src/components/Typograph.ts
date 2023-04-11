@@ -9,7 +9,7 @@ interface RegularTextProps {
   size?: "s" | "m" | 'xs';
   color?: "100" | "300" | "500";
   weight?: number;
-  hasError: boolean
+  hasError?: boolean
 }
 
 export const Label = styled.label<LabelProps>`
