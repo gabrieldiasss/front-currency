@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const InputFakeContainer = styled.div`
+  > p {
+    margin-top: 0.25rem;
+  }
+`
+
 export const InputFake = styled.div`
   display: flex;
   align-items: center;

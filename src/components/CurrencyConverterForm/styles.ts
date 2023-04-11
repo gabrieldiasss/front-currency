@@ -5,10 +5,6 @@ export const CurrencyConverterFormContainer = styled.div`
   gap: 1rem;
 `;
 
-export const InputFake = styled.div`
-
-`
-
 export const ConvertCurrencyField = styled.div`
   display: flex;
   flex-direction: column;

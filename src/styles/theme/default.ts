@@ -6,7 +6,8 @@ export const defaultTheme = {
         "base-text-300": "#45505E",
         "base-text-500": "#2E3742",
         "base-border": "#D7E0EB",
-        "base-hover": "#8C9CAD"
+        "base-hover": "#8C9CAD",
+        "base-error": "#F44336"
     },
     textSize: {
         "text-s": "0.875rem",

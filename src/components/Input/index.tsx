@@ -1,5 +1,6 @@
 import { InputHTMLAttributes, forwardRef } from "react";
-import { InputStyled, InputFake } from "./styles";
+import { InputStyled, InputFake, InputFakeContainer } from "./styles";
+import { RegularText } from "../Typograph";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   dollar?: boolean;
@@ -9,14 +10,14 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ dollar, error, ...props }, ref) => {
     return (
-      <div>
+      <InputFakeContainer>
         <InputFake>
           {dollar && <span>$</span>}
           <InputStyled ref={ref} {...props} />
         </InputFake>
 
-        {error}
-      </div>
+        <RegularText hasError={true}>{error}</RegularText>
+      </InputFakeContainer>
     );
   }
 );

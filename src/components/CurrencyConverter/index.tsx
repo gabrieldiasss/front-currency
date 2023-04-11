@@ -16,36 +16,38 @@ const confirmConvertValidationSchema = zod.object({
   stateFee: zod.string().min(1, "Informe o valor do estado"),
   typeOfPurchase: zod.nativeEnum(typeOfPurchase, {
     errorMap: () => {
-      return { message: "Informe o tipo da compra" }
-    }
-  })
-})
+      return { message: "Informe o tipo da compra" };
+    },
+  }),
+});
 
-type OrderData = zod.infer<typeof confirmConvertValidationSchema>
+type OrderData = zod.infer<typeof confirmConvertValidationSchema>;
 
-type ConfirmConvert = OrderData
+type ConfirmConvert = OrderData;
 
 export function CurrencyConverter() {
-
   const confirmConvert = useForm<ConfirmConvert>({
     resolver: zodResolver(confirmConvertValidationSchema),
-/*     defaultValues: {
+    defaultValues: {
       typeOfPurchase: undefined,
-    }, */
+    },
   });
 
-  const { handleSubmit } = confirmConvert
+  const { handleSubmit, watch } = confirmConvert;
+
+  const [dollar, stateFee] = watch(['dollar', 'stateFee'])
+  const disabledInput = !dollar || !stateFee
 
   function handleCovertCurrency(data: ConfirmConvert) {
     console.log(data);
   }
 
   return (
-    <FormProvider {...confirmConvert} >
+    <FormProvider {...confirmConvert}>
       <form onSubmit={handleSubmit(handleCovertCurrency)}>
         <CurrencyConverterForm />
         <CurrencyConverterMethod />
-        <Button type="submit">
+        <Button disabled={disabledInput} type="submit">
           <ArrowsLeftRight size={24} /> Converter
         </Button>
       </form>
